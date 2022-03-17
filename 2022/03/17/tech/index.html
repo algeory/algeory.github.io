@@ -20,23 +20,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.10.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Pie Jr.">
-<meta property="og:url" content="http://example.com/index.html">
+    <meta name="description" content="本地文件无法同步到github我是按照知乎上的一篇教程进行搭建的GitHub+Hexo 搭建个人网站详细教程 本地渲染，本地预览都没有问题，但却出现了博客内容无法同步到github仓库的问题 经过网上搜索发现是配置文件_config.yml出现了问题 与知乎原贴的方法稍有不同，将配置文件_config.yml中，将文件末尾处deploy项改为： 1234deploy:  type: git  re">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于用hexo搭建博客中出现的诸问题">
+<meta property="og:url" content="http://example.com/2022/03/17/tech/index.html">
 <meta property="og:site_name" content="Pie Jr.">
+<meta property="og:description" content="本地文件无法同步到github我是按照知乎上的一篇教程进行搭建的GitHub+Hexo 搭建个人网站详细教程 本地渲染，本地预览都没有问题，但却出现了博客内容无法同步到github仓库的问题 经过网上搜索发现是配置文件_config.yml出现了问题 与知乎原贴的方法稍有不同，将配置文件_config.yml中，将文件末尾处deploy项改为： 1234deploy:  type: git  re">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-17T12:35:12.000Z">
+<meta property="article:modified_time" content="2022-03-17T13:25:40.943Z">
 <meta property="article:author" content="xin">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2022/03/17/tech/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/03/17/tech/","path":"2022/03/17/tech/","title":"关于用hexo搭建博客中出现的诸问题"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Pie Jr.</title>
+<title>关于用hexo搭建博客中出现的诸问题 | Pie Jr.</title>
   
 
 
@@ -63,7 +67,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Pie Jr.</h1>
+      <p class="site-title">Pie Jr.</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -91,7 +95,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -104,6 +108,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E5%90%8C%E6%AD%A5%E5%88%B0github"><span class="nav-number">1.</span> <span class="nav-text">本地文件无法同步到github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%91%E5%AE%9A%E4%B8%AA%E6%80%A7%E5%8C%96%E5%9F%9F%E5%90%8D"><span class="nav-number">2.</span> <span class="nav-text">绑定个性化域名</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%9C%89%E4%BA%8C%EF%BC%9A"><span class="nav-number">2.0.1.</span> <span class="nav-text">出现的问题有二：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">2.0.2.</span> <span class="nav-text">解决办法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">1.域名解析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E6%AF%8F%E6%AC%A1%E5%90%8C%E6%AD%A5%E5%90%8E%E9%83%BD%E8%A6%81%E8%AE%BE%E7%BD%AE%E5%9F%9F%E5%90%8D"><span class="nav-number">2.0.2.2.</span> <span class="nav-text">2.每次同步后都要设置域名</span></a></li></ol></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -145,16 +150,17 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/17/tech/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -168,13 +174,13 @@
     </span>
     
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Pie Jr.">
+      <meta itemprop="name" content="关于用hexo搭建博客中出现的诸问题 | Pie Jr.">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/03/17/tech/" class="post-title-link" itemprop="url">关于用hexo搭建博客中出现的诸问题</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          关于用hexo搭建博客中出现的诸问题
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -198,7 +204,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="本地文件无法同步到github"><a href="#本地文件无法同步到github" class="headerlink" title="本地文件无法同步到github"></a>本地文件无法同步到github</h2><p>我是按照知乎上的一篇教程进行搭建的<a href="&quot;https://zhuanlan.zhihu.com/p/26625249&quot;">GitHub+Hexo 搭建个人网站详细教程</a></p>
+        <h2 id="本地文件无法同步到github"><a href="#本地文件无法同步到github" class="headerlink" title="本地文件无法同步到github"></a>本地文件无法同步到github</h2><p>我是按照知乎上的一篇教程进行搭建的<a href="&quot;https://zhuanlan.zhihu.com/p/26625249&quot;">GitHub+Hexo 搭建个人网站详细教程</a></p>
 <p>本地渲染，本地预览都没有问题，但却出现了博客内容无法同步到github仓库的问题</p>
 <p>经过网上搜索发现是配置文件_config.yml出现了问题</p>
 <p>与知乎原贴的方法稍有不同，将配置文件_config.yml中，将文件末尾处deploy项改为：</p>
@@ -216,7 +222,6 @@
 <p>主机记录：@|记录值：185.199.108.153\185.199.109.153\185.199.110.153\185.199.110.153(四个IP地址单独添加)</p>
 <h5 id="2-每次同步后都要设置域名"><a href="#2-每次同步后都要设置域名" class="headerlink" title="2.每次同步后都要设置域名"></a>2.每次同步后都要设置域名</h5><p>在本地博客文件夹blog\source下创建一个名为CNAME的文件（不能有后缀），内容为自己的域名，如此就可以一劳永逸了。</p>
 
-      
     </div>
 
     
@@ -224,88 +229,22 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/13/%E5%9B%9E%E5%BF%86%E5%A6%82%E4%BD%95%E6%89%BE%E5%AF%BB%EF%BC%8C%E6%99%AE%E9%B2%81%E6%96%AF%E7%89%B9%E6%95%99%E7%BB%99%E6%88%91%E7%9A%84%E4%B8%9C%E8%A5%BF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="xin">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Pie Jr.">
-      <meta itemprop="description" content="">
-    </span>
-    
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Pie Jr.">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/03/13/%E5%9B%9E%E5%BF%86%E5%A6%82%E4%BD%95%E6%89%BE%E5%AF%BB%EF%BC%8C%E6%99%AE%E9%B2%81%E6%96%AF%E7%89%B9%E6%95%99%E7%BB%99%E6%88%91%E7%9A%84%E4%B8%9C%E8%A5%BF/" class="post-title-link" itemprop="url">回忆如何找寻，普鲁斯特教给我的东西</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2022-03-13 00:10:36 / 修改时间：07:33:07" itemprop="dateCreated datePublished" datetime="2022-03-13T00:10:36+08:00">2022-03-13</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><em>普鲁斯特的一大贡献，在于他出示给人们一种回忆过去的方式，那就是不由自主的回忆。自主的回忆借助于智力和推理，是不可能是我们感到过去再现的。只有不由自主的回忆，才能通过当时的感觉与某种记忆之间的偶合（无意识联想），是我们的过去存活于我们现在感受到的事物之中。——-《译序》</em><br>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/03/13/%E5%9B%9E%E5%BF%86%E5%A6%82%E4%BD%95%E6%89%BE%E5%AF%BB%EF%BC%8C%E6%99%AE%E9%B2%81%E6%96%AF%E7%89%B9%E6%95%99%E7%BB%99%E6%88%91%E7%9A%84%E4%B8%9C%E8%A5%BF/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/03/13/%E5%9B%9E%E5%BF%86%E5%A6%82%E4%BD%95%E6%89%BE%E5%AF%BB%EF%BC%8C%E6%99%AE%E9%B2%81%E6%96%AF%E7%89%B9%E6%95%99%E7%BB%99%E6%88%91%E7%9A%84%E4%B8%9C%E8%A5%BF/" rel="prev" title="回忆如何找寻，普鲁斯特教给我的东西">
+                  <i class="fa fa-chevron-left"></i> 回忆如何找寻，普鲁斯特教给我的东西
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
+
 
 
 
