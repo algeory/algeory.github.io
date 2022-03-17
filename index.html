@@ -185,7 +185,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-03-17 20:35:12 / 修改时间：21:25:40" itemprop="dateCreated datePublished" datetime="2022-03-17T20:35:12+08:00">2022-03-17</time>
+      <time title="创建时间：2022-03-17 20:35:12 / 修改时间：21:33:12" itemprop="dateCreated datePublished" datetime="2022-03-17T20:35:12+08:00">2022-03-17</time>
     </span>
 
   
@@ -198,24 +198,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="本地文件无法同步到github"><a href="#本地文件无法同步到github" class="headerlink" title="本地文件无法同步到github"></a>本地文件无法同步到github</h2><p>我是按照知乎上的一篇教程进行搭建的<a href="&quot;https://zhuanlan.zhihu.com/p/26625249&quot;">GitHub+Hexo 搭建个人网站详细教程</a></p>
-<p>本地渲染，本地预览都没有问题，但却出现了博客内容无法同步到github仓库的问题</p>
-<p>经过网上搜索发现是配置文件_config.yml出现了问题</p>
-<p>与知乎原贴的方法稍有不同，将配置文件_config.yml中，将文件末尾处deploy项改为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:algeory/algeory.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>与之对应的，在github仓库中，将主页branch一项改为master。然后，在Settings-&gt;Pages中，branch也选择master.</p>
-<p>这样的话，再执行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>就可以将本地内容同步到github仓库啦。</p>
-<h2 id="绑定个性化域名"><a href="#绑定个性化域名" class="headerlink" title="绑定个性化域名"></a>绑定个性化域名</h2><h4 id="出现的问题有二："><a href="#出现的问题有二：" class="headerlink" title="出现的问题有二："></a>出现的问题有二：</h4><p>（1）自己的个性化域名404，但github提供的域名：xxx.github.io可以访问</p>
-<p>（2）个性化域名与github仓库关联后，每次同步都要重新关联</p>
-<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><h5 id="1-域名解析"><a href="#1-域名解析" class="headerlink" title="1.域名解析"></a>1.域名解析</h5><p>至于原帖提供的IP地址可能已经过时，导致在Settings-&gt;Pages里关联域名时出现错误，经过艰苦卓绝的搜索，找到了可用的IP地址</p>
-<p>添加1：记录类型：CNAME</p>
-<p>主机记录：www|记录值：xxx.github.io</p>
-<p>添加2：记录类型：A</p>
-<p>主机记录：@|记录值：185.199.108.153\185.199.109.153\185.199.110.153\185.199.110.153(四个IP地址单独添加)</p>
-<h5 id="2-每次同步后都要设置域名"><a href="#2-每次同步后都要设置域名" class="headerlink" title="2.每次同步后都要设置域名"></a>2.每次同步后都要设置域名</h5><p>在本地博客文件夹blog\source下创建一个名为CNAME的文件（不能有后缀），内容为自己的域名，如此就可以一劳永逸了。</p>
-
+          <p>hexo是一个博客建站工具，优点在于将博客内容托管在github上，不需要花钱购买服务器，搭建过程也较为简单。网上有很多教程，我依照知乎上的一篇教程进行操作，本来预计一两个小时就能完成的事却花了半天，错误频出。时间主要花费在找出问题在哪里。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/03/17/tech/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
