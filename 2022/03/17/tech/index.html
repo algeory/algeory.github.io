@@ -28,7 +28,7 @@
 <meta property="og:description" content="hexo是一个博客建站工具，优点在于将博客内容托管在github上，不需要花钱购买服务器，搭建过程也较为简单。网上有很多教程，我依照知乎上的一篇教程进行操作，本来预计一两个小时就能完成的事却花了半天，错误频出。时间主要花费在找出问题在哪里。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-17T12:35:12.000Z">
-<meta property="article:modified_time" content="2022-03-17T13:38:40.756Z">
+<meta property="article:modified_time" content="2022-03-17T13:53:39.197Z">
 <meta property="article:author" content="xin">
 <meta name="twitter:card" content="summary">
 
@@ -191,7 +191,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-03-17 20:35:12 / 修改时间：21:38:40" itemprop="dateCreated datePublished" datetime="2022-03-17T20:35:12+08:00">2022-03-17</time>
+      <time title="创建时间：2022-03-17 20:35:12 / 修改时间：21:53:39" itemprop="dateCreated datePublished" datetime="2022-03-17T20:35:12+08:00">2022-03-17</time>
     </span>
 
   
@@ -206,7 +206,7 @@
     <div class="post-body" itemprop="articleBody">
         <p>hexo是一个博客建站工具，优点在于将博客内容托管在github上，不需要花钱购买服务器，搭建过程也较为简单。网上有很多教程，我依照知乎上的一篇教程进行操作，本来预计一两个小时就能完成的事却花了半天，错误频出。时间主要花费在找出问题在哪里。</p>
 <span id="more"></span>
-<h2 id="本地文件无法同步到github"><a href="#本地文件无法同步到github" class="headerlink" title="本地文件无法同步到github"></a>本地文件无法同步到github</h2><p>我是按照知乎上的一篇教程进行搭建的<a href="&quot;https://zhuanlan.zhihu.com/p/26625249&quot;">GitHub+Hexo 搭建个人网站详细教程</a></p>
+<h2 id="本地文件无法同步到github"><a href="#本地文件无法同步到github" class="headerlink" title="本地文件无法同步到github"></a>本地文件无法同步到github</h2><p>我是按照知乎上的一篇教程进行搭建的：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249">连接时</a></p>
 <p>本地渲染，本地预览都没有问题，但却出现了博客内容无法同步到github仓库的问题。</p>
 <p>搜索发现问题出在_config.yml配置文件上：</p>
 <p>与知乎原贴的方法稍有不同，在配置文件_config.yml中，将文件末尾处deploy项改为：</p>
@@ -216,7 +216,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 <p>就可以将本地内容同步到github仓库啦。</p>
 <p>有时候仍会同步失败，例如错误代码的最后几行：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">FATAL &#123;</span><br><span class="line">  err: Error: Spawn failed</span><br><span class="line">      at ChildProcess.&lt;anonymous&gt; (C:\Users\admin\Desktop\博客\blog\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">      at ChildProcess.emit (events.js:314:20)</span><br><span class="line">      at ChildProcess.cp.emit (C:\Users\admin\Desktop\博客\blog\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">      at Process.ChildProcess._handle.onexit (internal/child_process.js:276:12) &#123;</span><br><span class="line">    code: 128</span><br><span class="line">  &#125;</span><br><span class="line">&#125; Something&#x27;s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">FATAL &#123;</span><br><span class="line">  err: Error: Spawn failed</span><br><span class="line">      at ChildProcess.&lt;anonymous&gt; (C:\Users\admin\Desktop\博客\blog\node_modules\hexo-util\lib\spawn.js:51:21)</span><br><span class="line">      at ChildProcess.emit (events.js:314:20)</span><br><span class="line">      at ChildProcess.cp.emit (C:\Users\admin\Desktop\博客\blog\node_modules\cross-spawn\lib\enoent.js:34:29)</span><br><span class="line">      at Process.ChildProcess._handle.onexit (internal/child_process.js:276:12) &#123;</span><br><span class="line">    code: 128</span><br><span class="line">  &#125;</span><br><span class="line">&#125; Something&#x27;s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html</span><br></pre></td></tr></table></figure>
 <p>这是单纯的网络问题，多试几次就好了。</p>
 <h2 id="绑定个性化域名"><a href="#绑定个性化域名" class="headerlink" title="绑定个性化域名"></a>绑定个性化域名</h2><h4 id="出现的问题有二："><a href="#出现的问题有二：" class="headerlink" title="出现的问题有二："></a>出现的问题有二：</h4><p>（1）自己的个性化域名404，但github提供的域名：xxx.github.io可以访问</p>
 <p>（2）个性化域名与github仓库关联后，每次同步都要重新关联</p>
