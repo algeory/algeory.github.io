@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="Gauss引理：若\(f(x) \in \mathbb Z[x]\),其在\(\mathbb Z[x]\)中不可约，则\(f(x)\)一定在\(\mathbb Z[x]\)中不可约。 Gauss引理说明整系数多项式的可约性不随着数系的扩张而改变，初看好像挺容易，证明它需要用到本原多项式的一个非常基本的性质：本原多项式的乘积仍然是本原多项式。这个看起来很显然的性质，证明起来却没那么容易，需要熟练掌握">
+<meta name="description" content="[!theorem] 有限维线性空间上的单射一定是满射  ^568595 \begin&#123;proof&#125; 在线性空间上，单射等价于：\(dim(Ker)&#x3D;n\)，满射等价于 若线性映射是单射，则 \end&#123;proof&#125; Frobenius映射：\(x&#x3D;x^p\),如果集合本身是一个有限域\(E\)，则它有素域\(\mathbb{F}_p\)，而一个域又可以看作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="gauss">
-<meta property="og:url" content="http://example.com/2024/06/22/gauss/index.html">
+<meta property="og:title" content="Frobenius映射为什么在有限域中是同构的">
+<meta property="og:url" content="http://example.com/2024/06/26/Fr/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Gauss引理：若\(f(x) \in \mathbb Z[x]\),其在\(\mathbb Z[x]\)中不可约，则\(f(x)\)一定在\(\mathbb Z[x]\)中不可约。 Gauss引理说明整系数多项式的可约性不随着数系的扩张而改变，初看好像挺容易，证明它需要用到本原多项式的一个非常基本的性质：本原多项式的乘积仍然是本原多项式。这个看起来很显然的性质，证明起来却没那么容易，需要熟练掌握">
+<meta property="og:description" content="[!theorem] 有限维线性空间上的单射一定是满射  ^568595 \begin&#123;proof&#125; 在线性空间上，单射等价于：\(dim(Ker)&#x3D;n\)，满射等价于 若线性映射是单射，则 \end&#123;proof&#125; Frobenius映射：\(x&#x3D;x^p\),如果集合本身是一个有限域\(E\)，则它有素域\(\mathbb{F}_p\)，而一个域又可以看作">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-06-22T12:50:06.000Z">
-<meta property="article:modified_time" content="2024-06-22T12:53:02.095Z">
+<meta property="article:published_time" content="2024-06-26T14:22:54.000Z">
+<meta property="article:modified_time" content="2024-11-19T14:38:32.687Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://example.com/2024/06/22/gauss/"/>
+  <link rel="canonical" href="http://example.com/2024/06/26/Fr/"/>
 
 
 
 
 
-  <title>gauss | Hexo</title>
+  <title>Frobenius映射为什么在有限域中是同构的 | Hexo</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/06/22/gauss/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/06/26/Fr/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">gauss</h1>
+          <h1 class="post-title" itemprop="name headline">Frobenius映射为什么在有限域中是同构的</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2024-06-22T20:50:06+08:00">
-                2024-06-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2024-06-26T22:22:54+08:00">
+                2024-06-26
               </time>
             
 
@@ -299,22 +299,29 @@
       
 
       
-        <p>Gauss引理：若<span class="math inline">\(f(x) \in \mathbb
-Z[x]\)</span>,其在<span class="math inline">\(\mathbb
-Z[x]\)</span>中不可约，则<span
-class="math inline">\(f(x)\)</span>一定在<span
-class="math inline">\(\mathbb Z[x]\)</span>中不可约。</p>
-<p>Gauss引理说明整系数多项式的可约性不随着数系的扩张而改变，初看好像挺容易，证明它需要用到本原多项式的一个非常基本的性质：本原多项式的乘积仍然是本原多项式。这个看起来很显然的性质，证明起来却没那么容易，需要熟练掌握高等代数的技巧。</p>
-<p>定义1:本原多项式：<span class="math inline">\(f(x) \in \mathbb
-Z[x]\)</span>,<span
-class="math inline">\(f(x)\)</span>的所有系数的最大公因子是<span
-class="math inline">\(1\)</span>,则称<span
-class="math inline">\(f(x)\)</span>是本原多项式。</p>
-<p>引理1:有理系数多项式<span
-class="math inline">\(f(x)\)</span>一定能写成<span
-class="math inline">\(af_0(x)\)</span>的形式，<span
-class="math inline">\(a\in \mathbb Q,f_0(x)\in \mathbb Z[X]\)</span>.
-证明：sadf</p>
+        <blockquote>
+<p>[!theorem] 有限维线性空间上的单射一定是满射</p>
+</blockquote>
+<p>^568595</p>
+<p><code>\begin&#123;proof&#125;</code> 在线性空间上，单射等价于：<span
+class="math inline">\(dim(Ker)=n\)</span>，满射等价于
+若线性映射是单射，则 <code>\end&#123;proof&#125;</code></p>
+<p>Frobenius映射：<span
+class="math inline">\(x=x^p\)</span>,如果集合本身是一个有限域<span
+class="math inline">\(E\)</span>，则它有素域<span
+class="math inline">\(\mathbb{F}_p\)</span>，而一个域又可以看作对它的素域做扩张得来的，故可以记为<span
+class="math inline">\(E/\mathbb{F}_p\)</span>，将<span
+class="math inline">\(E\)</span>视为域<span
+class="math inline">\(\mathbb{F}_p\)</span>上的线性空间
+<code>\begin&#123;theorem&#125;</code> skhdsgfdfg</p>
+<p><code>\end&#123;theorem&#125;</code> <span class="math display">\[
+dsg
+\]</span> <code>\begin&#123;proof&#125;</code> $$</p>
+<p>$$</p>
+<p>[!theorem] Title Conten</p>
+<blockquote>
+<p>[!theorem] Title Content</p>
+</blockquote>
 
       
     </div>
@@ -339,8 +346,8 @@ class="math inline">\(a\in \mathbb Q,f_0(x)\in \mathbb Z[X]\)</span>.
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2024/06/21/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2024/06/22/gauss/" rel="next" title="gauss">
+                <i class="fa fa-chevron-left"></i> gauss
               </a>
             
           </div>
@@ -349,8 +356,8 @@ class="math inline">\(a\in \mathbb Q,f_0(x)\in \mathbb Z[X]\)</span>.
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2024/06/26/Fr/" rel="prev" title="Frobenius映射为什么在有限域中是同构的">
-                Frobenius映射为什么在有限域中是同构的 <i class="fa fa-chevron-right"></i>
+              <a href="/2024/11/19/%E7%8E%AF%E7%9A%84%E8%AF%AD%E8%A8%80%E5%8F%99%E8%BF%B0%E8%B4%B9%E9%A9%AC%E5%B9%B3%E6%96%B9%E5%92%8C%E5%AE%9A%E7%90%86/" rel="prev" title="环的语言叙述费马平方和定理">
+                环的语言叙述费马平方和定理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
